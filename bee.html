@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Bee Mini App</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    img {
+      max-width: 95%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin: 20px 0;
+      color: #333;
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffcc00;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Добро пожаловать в Bee Mini App!</h1>
+
+  <!-- картинка должна лежать рядом с index.html -->
+  <img src="./bee-game.png" alt="Bee Game Screenshot">
+
+  <button onclick="sendData()">Отправить данные в Telegram</button>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.ready();   // сигнал Telegram, что приложение готово
+    tg.expand();  // разворачивает приложение на весь экран
+
+    function sendData() {
+      tg.sendData("Пользователь нажал кнопку 🐝");
+    }
+  </script>
+</body>
+</html>

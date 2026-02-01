@@ -14,86 +14,16 @@
       width: 100%;
       height: auto;
     }
-    .menu {
-      position: fixed;
-      bottom: 10px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    button {
-      padding: 10px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    /* модальное окно */
-    #modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-    }
-    #modal-content {
-      background: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      width: 80%;
-      border-radius: 10px;
-      text-align: center;
-    }
-    #modal-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    #close {
-      margin-top: 15px;
-      padding: 8px 16px;
-      background: #ccc;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
   <!-- основная картинка -->
   <img id="mainImage" src="bee-game.png" alt="Bee Game">
 
-  <!-- меню с кнопками -->
-  <div class="menu">
-    <button onclick="openShop()">🛒 Корзина</button>
-    <button onclick="openFriends()">👥 Друзья</button>
-  </div>
-
-  <!-- модальное окно -->
-  <div id="modal">
-    <div id="modal-content">
-      <h2>Магазин 🛒</h2>
-      <img src="shop.png" alt="Shop">
-      <button id="close" onclick="closeModal()">Закрыть</button>
-    </div>
-  </div>
-
   <script>
     const tg = window.Telegram.WebApp;
     tg.ready();
     tg.expand();
-
-    function openShop() {
-      document.getElementById("modal").style.display = "block";
-    }
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-    function openFriends() {
-      document.getElementById("mainImage").src = "friends.png";
-    }
   </script>
 </body>
 </html>

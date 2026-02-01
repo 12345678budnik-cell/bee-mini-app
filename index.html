@@ -11,19 +11,14 @@
       height: 100%;
       width: 100%;
       overflow: hidden; /* убираем прокрутку */
-      background-color: #000; /* фон */
     }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* картинка вписывается в экран */
-      display: block;
+    body {
+      background: url("./bee-game.png") no-repeat center center;
+      background-size: cover; /* картинка заполняет экран полностью */
     }
   </style>
 </head>
 <body>
-  <img src="./bee-game.png" alt="Bee Game">
-
   <script>
     const tg = window.Telegram.WebApp;
     tg.ready();

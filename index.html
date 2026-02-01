@@ -2,28 +2,32 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Bee Game</title>
+  <title>Bee Mini App</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
-    body {
+    html, body {
       margin: 0;
-      background: #000;
-      text-align: center;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden; /* убираем прокрутку */
+      background-color: #000; /* фон под картинку */
     }
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain; /* картинка целиком, сохраняет пропорции */
+      display: block;
     }
   </style>
 </head>
 <body>
-  <!-- основная картинка -->
-  <img id="mainImage" src="bee-game.png" alt="Bee Game">
+  <img src="./bee-game.png" alt="Bee Game">
 
   <script>
     const tg = window.Telegram.WebApp;
     tg.ready();
-    tg.expand();
+    tg.expand(); // разворачивает мини‑апп на весь экран
   </script>
 </body>
 </html>
